@@ -1,0 +1,23 @@
+.navCont {
+  background-color: teal;
+  color: whitesmoke;
+  align-items: center;
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.navLogo{
+  color: silver;
+  text-decoration: none;
+}
+
+.navLogo:hover{
+  text-decoration: underline;
+}
+
+.navLogo {
+  font-size: 2.5vw;
+  margin-left: 3vw;
+}

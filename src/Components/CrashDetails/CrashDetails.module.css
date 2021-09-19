@@ -1,0 +1,52 @@
+.crashDetailsCont {
+  padding-top: 70px;
+}
+
+.crashSection {
+  width: 60%;
+  margin: auto;
+  text-align: left;
+  padding: 1vw 3vw;
+  background-color: white;
+  color: #6c757d;
+  transition: 400ms;
+}
+
+
+.detailsTable {
+  border: 1px solid black;
+  width: 60vw;
+  margin: auto;
+}
+
+.deatilsHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.deatilsHeader span {
+  width: 30vw;
+  height: 60px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+  background-color: #ebebeb;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.deatilsRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.deatilsRow span {
+  width: 30vw;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+}
