@@ -73,37 +73,3 @@
   align-items: center;
 }
 
-.paginationCont {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.paginationCont button:nth-child(1),
-.paginationCont button:nth-child(2) {
-  font-size: 18px;
-  padding: 8px 15px;
-}
-
-.paginationCont button:nth-child(1) {
-  border: 1px solid #ff073a;
-  color: #ff073a;
-}
-
-.paginationCont button:nth-child(1):hover {
-  border: 1px solid #ff073a;
-  background-color: #ff073a;
-  color: white;
-}
-
-.paginationCont button:nth-child(2) {
-  border: 1px solid #28a745;
-  color: #28a745;
-  transition: 300ms;
-}
-
-.paginationCont button:nth-child(2):hover {
-  border: 1px solid #28a745;
-  margin-left: 20px;
-  background-color: #28a745;
-  color: white;
-}
