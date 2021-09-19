@@ -5,18 +5,15 @@ import { CarCrashContext } from "../../Context/CarCrashContext";
 import styles from "./Cardetails.module.css";
 
 function CarDetails() {
-  const [data, setData] = useState([]); // useState hook for changing the state which is initially empty by using api, will push the data by calling setData function
-
+  const [data, setData] = useState([]); 
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsEroor] = useState(false);
 
   const [page, setPage] = useState(0);
 
-  const { theme } = useContext(CarCrashContext); // exctracting theme using useContext hook by destructuring
+  const { theme } = useContext(CarCrashContext); 
 
-  const [showCard, setShowCard] = useState(true); // this is for toggling list to grid view by calling setShowCard(!showCard), which is initially true
-
-  const [query, setQuery] = useState("2021-04-14");
+  const [query, setQuery] = useState("");
 
   const getCrashData = (date = "2021-04-14", page = 0) => {
     setIsLoading(true);
@@ -41,7 +38,6 @@ function CarDetails() {
   };
   
 
-  // useEffect hook for the after-effects which has the array dependency page to change the pages
 
   useEffect(() => {
     getCrashData(query, page);
@@ -65,8 +61,6 @@ function CarDetails() {
         <h1>Vehical Crash Data</h1>
       </header>
 
-      {/* Filtering out the collision records by date */}
-
       <section>
         <div>
           <div className={styles.filterCont}>
@@ -81,10 +75,9 @@ function CarDetails() {
         </div>
       </section>
 
-      {/* Both Grid view and List view section */}
 
       <>
-        {showCard ? (
+        {(
           <section>
             {isLoading ? (
               <h3>Loading...</h3>
@@ -133,54 +126,12 @@ function CarDetails() {
                 <div className={styles.paginationCont}>
                   <button
                     disabled={page === 0}
-                    onClick={() => setPage(page - 10)}
+                    onClick={() => setPage(page - 5)}
                   >
-                    Prev
+                    PREVIOUS
                   </button>
 
-                  <button onClick={() => setPage(page + 10)}>Next</button>
-                </div>
-              </section>
-            )}
-          </section>
-        ) : (
-          <section>
-            {isLoading ? (
-              <h3>Loading...</h3>
-            ) : isError ? (
-              <h3>Something went wrong...</h3>
-            ) : (
-              <section>
-                <div className={styles.cardCont}>
-                  {data.map((item) => {
-                    return (
-                      <div
-                        className={styles.cardLinkCont}
-                        style={{ backgroundColor: theme.gridsBackground }}
-                      >
-                        <Link
-                          key={item.collision_id}
-                          to={item.collision_id}
-                          className={styles.cardLink}
-                        >
-                          <div>Car type -1 : {item.vehicle_type_code1}</div>
-                          <div>Car type -2 : {item.vehicle_type_code2}</div>
-                          <div>Crash date : {item.crash_date}</div>
-                          <div>Crash time: {item.crash_time}</div>
-                        </Link>
-                      </div>
-                    );
-                  })}
-                </div>
-                <div className={styles.paginationCont}>
-                  <button
-                    disabled={page === 0}
-                    onClick={() => setPage(page - 15)}
-                  >
-                    Prev
-                  </button>
-
-                  <button onClick={() => setPage(page + 15)}>Next</button>
+                  <button onClick={() => setPage(page + 5)}>Next</button>
                 </div>
               </section>
             )}
