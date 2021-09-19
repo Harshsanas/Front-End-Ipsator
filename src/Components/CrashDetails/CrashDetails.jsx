@@ -10,8 +10,7 @@ function CrashDetails() {
 
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsEroor] = useState(false);
-  const { id } = useParams(); // useParam hook for exctracting id which is getting from the api
-
+  const { id } = useParams(); 
   const { theme } = useContext(CarCrashContext);
 
   const getCrashData = () => {
@@ -54,9 +53,6 @@ function CrashDetails() {
         <header className={styles.crashHeader}>
           <h1>Vehical Crash Details</h1>
         </header>
-
-        {/* Showing the stored data in "data" array by mapping through it */}
-
         <section>
           {isLoading ? (
             <h3 style={{ width: "15%", margin: "auto" }}>Loading...</h3>
@@ -67,8 +63,6 @@ function CrashDetails() {
               className={styles.detailsTable}
               style={{ backgroundColor: theme.gridBackground }}
             >
-              {/* Using conditional check so that if that perticular field is not available it will not go for the next step */}
-
               <div className={styles.deatilsHeader}>
                 <span>Title</span>
                 <span>Data</span>
